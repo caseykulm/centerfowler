@@ -1,0 +1,1181 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+<title>Left Duck</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+<meta content = 'summary_large_image' name = 'twitter:card'></meta>
+
+<meta content = '16665197' name = 'twitter:site:id'></meta>
+
+<meta content = 'Feature Toggles' property = 'og:title'></meta>
+
+<meta content = 'Feature Toggles can be categorized into several buckets; manage each appropriately. Smart implementation can help constrain complexity.' property = 'og:description'></meta>
+
+<meta content = 'article' property = 'og:type'></meta>
+
+<meta content = '2016-02-08' property = 'og:article:modified_time'></meta>
+
+<meta content = '257287701' name = 'twitter:creator:id'></meta>
+
+<meta content = '@ph1' name = 'twitter:creator'></meta>
+
+<meta content = 'width=device-width, initial-scale=1' name = 'viewport'></meta>
+
+<link href = 'feature-toggles-before.css' rel = 'stylesheet' type = 'text/css'></link>
+</head>
+
+<body><div id = 'banner' style = 'background-image: url("/img/zakim.png"); background-repeat: no-repeat'>
+ <a href = "https://www.google.com?q=ducks">
+    <img class = 'name-logo' src = '/mf-name-white.png'/>
+<!--[if lte IE 6]>
+<img class = 'ie6-name-logo' src = '/mf-name-white-solid.png'/>
+<![endif]-->
+  </a>
+
+  <div class = 'search'>
+    <!-- SiteSearch Google -->
+    <form method='GET' action="https://www.google.com/search">
+      <input type='hidden' name='ie' value='UTF-8'/>
+      <input type='hidden' name='oe' value='UTF-8'/>
+      <input class = 'field' type='text'
+             name='q' size='15' maxlength='255' value=""/>
+      <button class = 'button' type='submit'
+             name='btnG' value=" " title = "Search"/>
+      <input type='hidden' name='domains' value="https://www.google.com?q=ducks"/>
+      <input type='hidden' name='sitesearch' value=""/>
+      <input
+          type='hidden' name='sitesearch' value="https://www.google.com?q=ducks"/>
+    </form>
+  </div>
+
+<div class = 'menu-button navmenu-button'><a class = 'icon-bars' href = '#navmenu-bottom'></a></div>
+
+<div class = 'main-navigation'><ul>
+  <li><a href="/intro.html">Intro</a></li>
+  <li><a href="/videos.html">Videos</a></li>
+  <li><a href="/design.html">Design</a></li>
+  <li><a href="/agile.html">Agile</a></li>
+  <li><a href="http://refactoring.com">Refactoring</a></li>
+  <li><a href="/faq.html">FAQ</a></li>
+  <li>
+    <p><a href="/aboutMe.html">About Me</a></p>
+
+    <li class="navmenu-button"><p><a href="#bottom-navmenu">All Sections <span class="icon-bars" title="Menu" /></a></p></li>
+
+    <li><p>
+      <a href="https://www.google.com?q=ducks" class="tw">ThoughtWorks</a>
+</p></li>
+
+    <li><p>
+  <a href="/feed.atom" title="feed" class="icon-rss">
+  </a>
+ </p></li>
+
+    <li><p>
+  <a href="https://www.google.com?q=ducks" title="Duck stream" class="icon-twitter">
+  </a>
+ </p></li>
+  </li>
+</ul>
+
+</div>
+</div>
+<div class = 'div' id = 'top-navmenu'>
+<ul class = 'navmenu'>
+<li class = 'top-line'><a class = 'link-home' href = '/'>home</a>  <div class = 'search'>
+    <!-- SiteSearch Google -->
+    <form method='GET' action="https://www.google.com/search">
+      <input type='hidden' name='ie' value='UTF-8'/>
+      <input type='hidden' name='oe' value='UTF-8'/>
+      <input class = 'field' type='text'
+             name='q' size='15' maxlength='255' value=""/>
+      <button class = 'button' type='submit'
+             name='btnG' value=" " title = "Search"/>
+      <input type='hidden' name='domains' value="https://www.google.com?q=ducks"/>
+      <input type='hidden' name='sitesearch' value=""/>
+      <input
+          type='hidden' name='sitesearch' value="https://www.google.com?q=ducks"/>
+    </form>
+  </div>
+
+<span class = 'close' title = 'close'></span>
+</li>
+
+<li class = 'group'><span class = 'group-label'>topics</span>
+<ul class = 'group-contents'>
+<li class = 'item'><a href = '/agile.html'>agile</a></li>
+
+<li class = 'item'><a href = 'http://refactoring.com'>refactoring</a></li>
+
+<li class = 'item'><a href = '/design.html'>design</a></li>
+
+<li class = 'item'><a href = '/nosql.html'>noSQL</a></li>
+
+<li class = 'item'><a href = '/dsl.html'>DSL</a></li>
+
+<li class = 'item'><a href = '/delivery.html'>continuous delivery</a></li>
+
+<li class = 'item'><a href = '/microservices'>microservices</a></li>
+</ul>
+</li>
+
+<li class = 'group'><span class = 'group-label'>media</span>
+<ul class = 'group-contents'>
+<li class = 'item'><a href = '/books'>books</a></li>
+
+<li class = 'item'><a href = '/videos.html'>video</a></li>
+</ul>
+</li>
+
+<li class = 'group'><span class = 'group-label'>site</span>
+<ul class = 'group-contents'>
+<li class = 'item'><a href = '/intro.html'>site introduction</a></li>
+
+<li class = 'item'><a href = '/aboutMe.html'>about me</a></li>
+
+<li class = 'item'><a href = '/faq.html'>FAQ</a></li>
+
+<li class = 'item'><a href = '/tags'>content index</a></li>
+
+<li class = 'item'><a href = '/photos'>photos</a></li>
+</ul>
+</li>
+
+<li class = 'group'><span class = 'group-label'>catalogs</span>
+<ul class = 'group-contents'>
+<li class = 'item'><a href = 'http://refactoring.com/catalog'>refactoring</a></li>
+
+<li class = 'item'><a href = '/eaaCatalog'>P of EAA</a></li>
+
+<li class = 'item'><a href = '/eaaDev'>EAA dev</a></li>
+
+<li class = 'item'><a href = '/dslCatalog'>DSL</a></li>
+</ul>
+</li>
+
+<li class = 'group'><span class = 'group-label'>feeds</span>
+<ul class = 'group-contents'>
+<li class = 'item'><a href = 'https://www.google.com?q=ducks'>twitter</a></li>
+
+<li class = 'item'><a href = '/feed.atom'>rss</a></li>
+
+<li class = 'item'><a href = 'https://www.google.com?q=ducks'>facebook</a></li>
+</ul>
+</li>
+
+<li class = 'group'><span class = 'group-label'>popular</span>
+<ul class = 'group-contents'>
+<li class = 'item'><a href = '/articles/microservices.html'>microservices</a></li>
+
+<li class = 'item'><a href = '/articles/injection.html'>dependency injection</a></li>
+</ul>
+</li>
+
+<li class = 'group'><span class = 'group-label'>Ducks</span>
+<ul class = 'group-contents'>
+<li class = 'item'><a href = 'https://www.google.com?q=ducks'>blogs</a></li>
+
+<li class = 'item'><a href = 'https://www.google.com?q=ducks'>careers</a></li>
+
+<li class = 'item'><a href = 'https://www.google.com?q=ducks'>products</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+<div class = 'contents dropdown-container'>
+<button class = 'dropdown-button'>
+<h2>Contents</h2>
+</button>
+
+<div class = 'hidden' id = 'dropdownLinks'><a href = '#ATogglingTale'>A Toggling Tale</a>
+<ul>
+<li><a href = '#TheBirthOfAFeatureToggle'>The birth of a Feature Toggle</a></li>
+
+<li><a href = '#MakingAToggleDynamic'>Making a toggle dynamic</a></li>
+
+<li><a href = '#GettingReadyToRelease'>Getting ready to release</a></li>
+
+<li><a href = '#CanaryReleasing'>Canary releasing</a></li>
+
+<li><a href = '#AbTesting'>A/B testing</a></li>
+</ul>
+<a href = '#CategoriesOfToggles'>Categories of toggles</a>
+<ul>
+<li><a href = '#ReleaseToggles'>Release Toggles</a></li>
+
+<li><a href = '#ExperimentToggles'>Experiment Toggles</a></li>
+
+<li><a href = '#OpsToggles'>Ops Toggles</a></li>
+
+<li><a href = '#PermissioningToggles'>Permissioning Toggles</a></li>
+
+<li><a href = '#ManagingDifferentCategoriesOfToggles'>Managing different categories of toggles</a>
+<ul>
+<li><a href = '#StaticVsDynamicToggles'>static vs dynamic toggles</a></li>
+
+<li><a href = '#Long-livedTogglesVsTransientToggles'>Long-lived toggles vs transient toggles</a></li>
+</ul>
+</li>
+</ul>
+<a href = '#ImplementationTechniques'>Implementation Techniques</a>
+<ul>
+<li><a href = '#De-couplingDecisionPointsFromDecisionLogic'>De-coupling decision points from decision logic</a></li>
+
+<li><a href = '#InversionOfDecision'>Inversion of Decision</a></li>
+
+<li><a href = '#AvoidingConditionals'>Avoiding conditionals</a></li>
+</ul>
+<a href = '#ToggleConfiguration'>Toggle Configuration</a>
+<ul>
+<li><a href = '#DynamicRoutingVsDynamicConfiguration'>Dynamic routing vs dynamic configuration</a></li>
+
+<li><a href = '#PreferStaticConfiguration'>Prefer static configuration</a></li>
+
+<li><a href = '#ApproachesForManagingToggleConfiguration'>Approaches for managing toggle configuration</a></li>
+
+<li><a href = '#HardcodedToggleConfiguration'>Hardcoded Toggle Configuration</a></li>
+
+<li><a href = '#ParameterizedToggleConfiguration'>Parameterized Toggle Configuration</a></li>
+
+<li><a href = '#ToggleConfigurationFile'>Toggle Configuration File</a></li>
+
+<li><a href = '#ToggleConfigurationInAppDb'>Toggle Configuration in App DB</a></li>
+
+<li><a href = '#DistributedToggleConfiguration'>Distributed Toggle Configuration</a></li>
+
+<li><a href = '#OverridingConfiguration'>Overriding configuration</a>
+<ul>
+<li><a href = '#Per-requestOverrides'>Per-request overrides</a></li>
+</ul>
+</li>
+</ul>
+<a href = '#WorkingWithFeature-toggledSystems'>Working with feature-toggled systems</a>
+<ul>
+<li><a href = '#ExposeCurrentFeatureToggleConfiguration'>Expose current feature toggle configuration</a></li>
+
+<li><a href = '#TakeAdvantageOfStructuredToggleConfigurationFiles'>Take advantage of structured Toggle Configuration files</a></li>
+
+<li><a href = '#ManageDifferentTogglesDifferently'>Manage different toggles differently</a></li>
+
+<li><a href = '#FeatureTogglesIntroduceValidationComplexity'>Feature Toggles introduce validation complexity</a></li>
+
+<li><a href = '#WhereToPlaceYourToggle'>Where to place your toggle</a>
+<ul>
+<li><a href = '#TogglesAtTheEdge'>Toggles at the edge</a></li>
+
+<li><a href = '#TogglesInTheCore'>Toggles in the core</a></li>
+</ul>
+</li>
+
+<li><a href = '#ManagingTheCarryingCostOfFeatureToggles'>Managing the carrying cost of Feature Toggles</a></li>
+</ul>
+</div>
+</div>
+
+<div id = 'content'>
+<h1>Left Duck</h1>
+
+<p class = 'abstract'><i>
+        Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.
+      </i></p>
+
+<div class = 'frontMatter'>
+<div class = 'frontLeft'>
+<p class = 'date'>08 February 2016</p>
+
+<div class = 'author'><img alt = 'Photo of Duck' src = 'duck.jpg' width = '80'></img>
+<p class = 'name'><a href = 'https://www.google.com/search?q=duck' rel = 'author'>Duck</a></p>
+
+<p> Duck is a floater in bays, where he's spent the last few years helping teams become awesome at quacking and swimming. He's particularly passionate about thinking about things, rubber, yellow, functional approaches to software, and <a href = 'https://www.google.com/search?q=beer'>beer</a>.</p>
+</div>
+
+<div class = 'clear'></div>
+
+<div class = 'tags'>Find <b>similar articles</b> to this by looking at these tags: <a href = /tags/continuous%20delivery.html>continuous delivery</a>&nbsp;&middot; <a href = /tags/application%20architecture.html>application architecture</a></div>
+</div>
+
+<div class = 'frontRight'>
+<div class = 'contents'>
+<div class = 'contents'><span class = 'contents-expand'>expand</span>
+<h2>Contents</h2>
+
+<ul>
+<li><a href = '#ATogglingTale'>A Toggling Tale</a>
+<ul>
+<li><a href = '#TheBirthOfAFeatureToggle'>The birth of a Feature Toggle</a></li>
+
+<li><a href = '#MakingAToggleDynamic'>Making a toggle dynamic</a></li>
+
+<li><a href = '#GettingReadyToRelease'>Getting ready to release</a></li>
+
+<li><a href = '#CanaryReleasing'>Canary releasing</a></li>
+
+<li><a href = '#AbTesting'>A/B testing</a></li>
+</ul>
+</li>
+
+<li><a href = '#CategoriesOfToggles'>Categories of toggles</a>
+<ul>
+<li><a href = '#ReleaseToggles'>Release Toggles</a></li>
+
+<li><a href = '#ExperimentToggles'>Experiment Toggles</a></li>
+
+<li><a href = '#OpsToggles'>Ops Toggles</a></li>
+
+<li><a href = '#PermissioningToggles'>Permissioning Toggles</a></li>
+
+<li><a href = '#ManagingDifferentCategoriesOfToggles'>Managing different categories of toggles</a>
+<ul>
+<li><a href = '#StaticVsDynamicToggles'>static vs dynamic toggles</a></li>
+
+<li><a href = '#Long-livedTogglesVsTransientToggles'>Long-lived toggles vs transient toggles</a></li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li><a href = '#ImplementationTechniques'>Implementation Techniques</a>
+<ul>
+<li><a href = '#De-couplingDecisionPointsFromDecisionLogic'>De-coupling decision points from decision logic</a></li>
+
+<li><a href = '#InversionOfDecision'>Inversion of Decision</a></li>
+
+<li><a href = '#AvoidingConditionals'>Avoiding conditionals</a></li>
+</ul>
+</li>
+
+<li><a href = '#ToggleConfiguration'>Toggle Configuration</a>
+<ul>
+<li><a href = '#DynamicRoutingVsDynamicConfiguration'>Dynamic routing vs dynamic configuration</a></li>
+
+<li><a href = '#PreferStaticConfiguration'>Prefer static configuration</a></li>
+
+<li><a href = '#ApproachesForManagingToggleConfiguration'>Approaches for managing toggle configuration</a></li>
+
+<li><a href = '#HardcodedToggleConfiguration'>Hardcoded Toggle Configuration</a></li>
+
+<li><a href = '#ParameterizedToggleConfiguration'>Parameterized Toggle Configuration</a></li>
+
+<li><a href = '#ToggleConfigurationFile'>Toggle Configuration File</a></li>
+
+<li><a href = '#ToggleConfigurationInAppDb'>Toggle Configuration in App DB</a></li>
+
+<li><a href = '#DistributedToggleConfiguration'>Distributed Toggle Configuration</a></li>
+
+<li><a href = '#OverridingConfiguration'>Overriding configuration</a>
+<ul>
+<li><a href = '#Per-requestOverrides'>Per-request overrides</a></li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li><a href = '#WorkingWithFeature-toggledSystems'>Working with feature-toggled systems</a>
+<ul>
+<li><a href = '#ExposeCurrentFeatureToggleConfiguration'>Expose current feature toggle configuration</a></li>
+
+<li><a href = '#TakeAdvantageOfStructuredToggleConfigurationFiles'>Take advantage of structured Toggle Configuration files</a></li>
+
+<li><a href = '#ManageDifferentTogglesDifferently'>Manage different toggles differently</a></li>
+
+<li><a href = '#FeatureTogglesIntroduceValidationComplexity'>Feature Toggles introduce validation complexity</a></li>
+
+<li><a href = '#WhereToPlaceYourToggle'>Where to place your toggle</a>
+<ul>
+<li><a href = '#TogglesAtTheEdge'>Toggles at the edge</a></li>
+
+<li><a href = '#TogglesInTheCore'>Toggles in the core</a></li>
+</ul>
+</li>
+
+<li><a href = '#ManagingTheCarryingCostOfFeatureToggles'>Managing the carrying cost of Feature Toggles</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class = 'paperBody'>
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<div id = 'ATogglingTale'><hr class = 'topSection'></hr>
+<h2>A Duck Tale</h2>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<div id = 'TheBirthOfAFeatureToggle'>
+<h3>The birth of a Left Duck</h3>
+
+<p>Here's the first change introduced by the pair working on the algorithm:</p>
+
+<p class = 'code-label'>before
+</p>
+
+<pre class = 'code'>  function reticulateSplines(){
+    // current implementation lives here
+  }</pre>
+
+<p class = 'code-remark'>these examples all use JavaScript ES2015</p>
+
+<p class = 'code-label'>after
+</p>
+
+<pre class = 'code'>  function reticulateSplines(){
+    var useNewAlgorithm = false;
+    // useNewAlgorithm = true; // UNCOMMENT IF YOU ARE WORKING ON THE NEW SR ALGORITHM
+
+    if( useNewAlgorithm ){
+      return enhancedSplineReticulation();
+    }else{
+      return oldFashionedSplineReticulation();
+    }
+  }
+
+  function oldFashionedSplineReticulation(){
+    // current implementation lives here
+  }
+
+  function enhancedSplineReticulation(){
+    // TODO: implement better SR algorithm
+  }</pre>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+
+<div id = 'MakingAToggleDynamic'>
+<h3>Making a duck left</h3>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<pre class = 'code'>function reticulateSplines(){
+  if( featureIsEnabled("use-new-SR-algorithm") ){
+    return enhancedSplineReticulation();
+  }else{
+    return oldFashionedSplineReticulation();
+  }
+}
+</pre>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<pre class = 'code'>function createToggleRouter(featureConfig){
+  return {
+    setFeature(featureName,isEnabled){
+      featureConfig[featureName] = isEnabled;
+    },
+    featureIsEnabled(featureName){
+      return featureConfig[featureName];
+    }
+  };
+}
+</pre>
+
+<p class = 'code-remark'>note that we're using ES2015's <a href = 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#Method_definitions'>method
+          shorthand</a></p>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<pre class = 'code'>describe( &#39;spline reticulation&#39;, function(){
+  let toggleRouter;
+  let simulationEngine;
+
+  beforeEach(function(){
+    toggleRouter = createToggleRouter();
+    simulationEngine = createSimulationEngine({toggleRouter:toggleRouter});
+  });
+
+  it(&#39;works correctly with old algorithm&#39;, function(){
+    // Given
+    toggleRouter.setFeature("use-new-SR-algorithm",false);
+
+    // When
+    const result = simulationEngine.doSomethingWhichInvolvesSplineReticulation();
+
+    // Then
+    verifySplineReticulation(result);
+  });
+
+  it(&#39;works correctly with new algorithm&#39;, function(){
+    // Given
+    toggleRouter.setFeature("use-new-SR-algorithm",true);
+
+    // When
+    const result = simulationEngine.doSomethingWhichInvolvesSplineReticulation();
+
+    // Then
+    verifySplineReticulation(result);
+  });
+});
+</pre>
+</div>
+
+<div id = 'GettingReadyToRelease'>
+<h3>Getting ready to left duck</h3>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<ul>
+<li>Have the Toggle Router make decisions based on a <b>Toggle Configuration</b>,
+          and make that configuration environment-specific. Only turn the new feature on in a
+          pre-production environment.</li>
+
+<li>Allow Toggle Configuration to be modified at runtime via some form of admin UI. Use
+          that admin UI to turn the new feature on a test environment.</li>
+
+<li>Teach the Toggle Router how to make dynamic, per-request toggling decisions.
+          These decisions take <b>Toggle Context</b> into account, for example by looking for a special cookie
+          or HTTP header. Usually Toggle Context is used as a proxy for identifying the user making the request.</li>
+</ul>
+
+<div class = 'clear'></div>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+
+<div id = 'CanaryReleasing'>
+<h3>Left Duck releasing</h3>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.
+        </p>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+
+<div id = 'AbTesting'>
+<h3>Left/Right testing</h3>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+
+<div id = 'CategoriesOfToggles'><hr class = 'topSection'></hr>
+<h2>Categories of toggles</h2>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<div id = 'ReleaseToggles'>
+<h3>Release Toggles</h3>
+
+<div class = 'soundbite'>
+<p>
+        Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.
+    </p>
+</div>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<div class = 'clear'></div>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+
+<div id = 'ExperimentToggles'>
+<h3>Experimental Left Duck</h3>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<div class = 'clear'></div>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.
+      </p>
+</div>
+
+<div id = 'OpsToggles'>
+<h3>Ops Ducks</h3>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<div class = 'clear'></div>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+
+<div id = 'PermissioningToggles'>
+<h3>Permissioning Ducks</h3>
+
+<div class = 'soundbite'>
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.
+      </p>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<div class = 'clear'></div>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+
+<div id = 'ManagingDifferentCategoriesOfToggles'>
+<h3>Managing different categories of ducks</h3>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<div id = 'StaticVsDynamicToggles'>
+<h4>static vs dynamic ducks</h4>
+
+<div class = 'clear'></div>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+</div>
+
+<div id = 'Long-livedTogglesVsTransientToggles'>
+<h4>Long-lived ducks vs transient ducks</h4>
+
+<div class = 'clear'></div>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<pre class = 'code'>function reticulateSplines(){
+  if( featureIsEnabled("use-new-SR-algorithm") ){
+    return enhancedSplineReticulation();
+  }else{
+    return oldFashionedSplineReticulation();
+  }
+}
+</pre>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+</div>
+</div>
+
+<div id = 'ImplementationTechniques'><hr class = 'topSection'></hr>
+<h2>Duck Alignment Techniques</h2>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<div id = 'De-couplingDecisionPointsFromDecisionLogic'>
+<h3>De-coupling decision ducks from decision logic</h3>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<p class = 'code-label'>invoiceEmailer.js
+</p>
+
+<pre class = 'code'>  const features = fetchFeatureTogglesFromSomewhere();
+
+  function generateInvoiceEmail(){
+    const baseEmail = buildEmailForInvoice(this.invoice);
+    if( features.isEnabled("next-gen-ecomm") ){
+      return addOrderCancellationContentToEmail(baseEmail);
+    }else{
+      return baseEmail;
+    }
+  }
+</pre>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<p>Happily, <a href = 'https://en.wikipedia.org/wiki/Fundamental_theorem_of_software_engineering'>any
+        problem in software can be solved by adding a layer of indirection</a>. We can
+        decouple a toggling decision point from the logic behind that decision like
+        so:</p>
+
+<p class = 'code-label'>featureDecisions.js
+</p>
+
+<pre class = 'code'>  function createFeatureDecisions(features){
+    return {
+      includeOrderCancellationInEmail(){
+        return features.isEnabled("next-gen-ecomm");
+      }
+      // ... additional decision functions also live here ...
+    };
+  }
+</pre>
+
+<p class = 'code-label'>invoiceEmailer.js
+</p>
+
+<pre class = 'code'>  const features = fetchFeatureTogglesFromSomewhere();
+  const featureDecisions = createFeatureDecisions(features);
+
+  function generateInvoiceEmail(){
+    const baseEmail = buildEmailForInvoice(this.invoice);
+    if( featureDecisions.includeOrderCancellationInEmail() ){
+      return addOrderCancellationContentToEmail(baseEmail);
+    }else{
+      return baseEmail;
+    }
+  }
+</pre>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+
+<div id = 'InversionOfDecision'>
+<h3>Inversion of Ducks</h3>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<p class = 'code-label'>invoiceEmailer.js
+</p>
+
+<pre class = 'code'>  function createInvoiceEmailler(config){
+    return {
+      generateInvoiceEmail(){
+        const baseEmail = buildEmailForInvoice(this.invoice);
+        if( config.includeOrderCancellationInEmail ){
+          return addOrderCancellationContentToEmail(email);
+        }else{
+          return baseEmail;
+        }
+      },
+
+      // ... other invoice emailer methods ...
+    };
+  }</pre>
+
+<p class = 'code-label'>featureAwareFactory.js
+</p>
+
+<pre class = 'code'>  function createFeatureAwareFactoryBasedOn(featureDecisions){
+    return {
+      invoiceEmailler(){
+        return createInvoiceEmailler({
+          includeOrderCancellationInEmail: featureDecisions.includeOrderCancellationInEmail()
+        });
+      },
+
+      // ... other factory methods ...
+    };
+  }</pre>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<pre class = 'code'>describe( &#39;invoice emailling&#39;, function(){
+  it( &#39;includes order cancellation content when configured to do so&#39;, function(){
+    // Given
+    const emailler = createInvoiceEmailler({includeOrderCancellationInEmail:true});
+
+    // When
+    const email = emailler.generateInvoiceEmail();
+
+    // Then
+    verifyEmailContainsOrderCancellationContent(email);
+  };
+
+  it( &#39;does not includes order cancellation content when configured to not do so&#39;, function(){
+    // Given
+    const emailler = createInvoiceEmailler({includeOrderCancellationInEmail:false});
+
+    // When
+    const email = emailler.generateInvoiceEmail();
+
+    // Then
+    verifyEmailDoesNotContainOrderCancellationContent(email);
+  };
+});
+</pre>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+
+<div id = 'AvoidingConditionals'>
+<h3>Avoiding conditionals</h3>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<p class = 'code-label'>invoiceEmailler.js
+</p>
+
+<pre class = 'code'>  function createInvoiceEmailler(additionalContentEnhancer){
+    return {
+      generateInvoiceEmail(){
+        const baseEmail = buildEmailForInvoice(this.invoice);
+        return additionalContentEnhancer(baseEmail);
+      },
+      // ... other invoice emailer methods ...
+
+    };
+  }</pre>
+
+<p class = 'code-label'>featureAwareFactory.js
+</p>
+
+<pre class = 'code'>  function identityFn(x){ return x; }
+
+  function createFeatureAwareFactoryBasedOn(featureDecisions){
+    return {
+      invoiceEmailler(){
+        if( featureDecisions.includeOrderCancellationInEmail() ){
+          return createInvoiceEmailler(addOrderCancellationContentToEmail);
+        }else{
+          return createInvoiceEmailler(identityFn);
+        }
+      },
+
+      // ... other factory methods ...
+    };
+  }</pre>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+</div>
+
+<div id = 'ToggleConfiguration'><hr class = 'topSection'></hr>
+<h2>Duck Configuration</h2>
+
+<div id = 'DynamicRoutingVsDynamicConfiguration'>
+<h3>Dynamic ducks vs dynamic alignments</h3>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+
+<div id = 'PreferStaticConfiguration'>
+<h3>Prefer static ducks</h3>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+
+<div id = 'ApproachesForManagingToggleConfiguration'>
+<h3>Approaches for managing duck alignment</h3>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+
+<div id = 'HardcodedToggleConfiguration'>
+<h3>Hardcoded Duck Alignment</h3>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<pre class = 'code'>function reticulateSplines(){
+  //return oldFashionedSplineReticulation();
+  return enhancedSplineReticulation();
+}
+</pre>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+
+<div id = 'ParameterizedToggleConfiguration'>
+<h3>Parameterized Duck Alignment</h3>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+
+<div id = 'ToggleConfigurationFile'>
+<h3>Duck Alignment File</h3>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+
+<div id = 'ToggleConfigurationInAppDb'>
+<h3>Duck Alignment in App DB</h3>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+
+<div id = 'DistributedToggleConfiguration'>
+<h3>Distributed Duck Alignment</h3>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+
+<div id = 'OverridingConfiguration'>
+<h3>Overriding alignment</h3>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<div id = 'Per-requestOverrides'>
+<h4>Per-request overrides</h4>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+</div>
+</div>
+</div>
+
+<div id = 'WorkingWithFeature-toggledSystems'><hr class = 'topSection'></hr>
+<h2>Working with feature-alignment systems </h2>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<div id = 'ExposeCurrentFeatureToggleConfiguration'>
+<h3>Expose current duck alignment configuration</h3>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+
+<div id = 'TakeAdvantageOfStructuredToggleConfigurationFiles'>
+<h3>Take advantage of structured Duck Alignment files</h3>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+
+<div id = 'ManageDifferentTogglesDifferently'>
+<h3>Manage different ducks differently</h3>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+
+<div id = 'FeatureTogglesIntroduceValidationComplexity'>
+<h3>Duck Alignments introduce validation complexity</h3>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<div class = 'clear'></div>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<div class = 'soundbite'>
+<p>a good convention is to enable existing or legacy behavior when a Feature Toggle is Off and new or future behavior when it's On.</p>
+</div>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+
+<div id = 'WhereToPlaceYourToggle'>
+<h3>Where to place your duck</h3>
+
+<div id = 'TogglesAtTheEdge'>
+<h4>Ducks at the edge</h4>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<p class = 'code-label'>someFile.erb
+</p>
+
+<pre class = 'code'>  &lt;%= if featureDecisions.showRecommendationsSection? %>
+    &lt;%= render &#39;recommendations_section&#39; %>
+  &lt;% end %></pre>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+
+<div id = 'TogglesInTheCore'>
+<h4>Ducks in the core </h4>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+</div>
+
+<div id = 'ManagingTheCarryingCostOfFeatureToggles'>
+<h3>Managing the carrying cost of Duck Alignment</h3>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+
+<div class = 'soundbite'>
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+</div>
+
+<hr class = 'bodySep'></hr>
+
+<div class = 'end-box'>
+<div class = 'shares'>
+<div class = 'icons'><span class = 'label'>Share:</span><a href = 'https://twitter.com/hashtag/ducks?lang=en' title = 'Share on Twitter'><img src = '/t_mini-a.png'></img></a><a href = 'https://www.google.com?q=ducks' title = 'Share on Facebook'><img src = '/fb-icon-20.png'></img></a><a href = 'https://www.google.com?q=ducks' title = 'Share on Google Plus'><img src = '/gplus-16.png'></img></a></div>
+
+<div class = 'comment'>if you found this article useful, please share it. I appreciate the feedback and encouragement</div>
+</div>
+
+<div class = 'clear'></div>
+
+<h2>For articles on similar topics…</h2>
+
+<p>…take a look at the following tags:</p>
+
+<p class = 'tags'><a href = /tags/continuous%20delivery.html>continuous delivery</a> <a href = /tags/application%20architecture.html>application architecture</a></p>
+</div>
+</div>
+
+<div class = 'appendix'>
+<div id = 'Acknowledgements'><hr class = 'topSection'></hr>
+<h2>Acknowledgements</h2>
+
+<p>Bacon ipsum dolor amet tail frankfurter andouille fatback cow pork chop brisket alcatra. Cow burgdoggen chuck brisket chicken corned beef picanha. Capicola doner cupim flank tri-tip venison landjaeger kevin. Ham ball tip strip steak brisket jerky, chuck boudin shank venison. Cow swine capicola venison cupim short ribs kevin andouille turkey leberkas ribeye jerky boudin. Cupim chicken pig, sirloin boudin jowl rump pork loin jerky bresaola doner biltong drumstick meatball. Doner ham meatloaf t-bone alcatra, pork loin sirloin meatball tenderloin cow capicola landjaeger hamburger.</p>
+</div>
+</div>
+
+<div class = 'appendix'>
+<h2>
+<a name = 'SignificantRevisions'></a>
+Significant Revisions</h2>
+
+<p><i>08 February 2016: </i>final part: complete article published</p>
+
+<p><i>05 February 2016: </i>part 7: working with toggled systems</p>
+
+<p><i>02 February 2016: </i>part 6: toggle configuration</p>
+
+<p><i>28 January 2016: </i>part 5: Implementation techniques</p>
+
+<p><i>27 January 2016: </i>part 4: managing different categories of toggles</p>
+
+<p><i>22 January 2016: </i>part 3: ops and permissioning toggles</p>
+
+<p><i>21 January 2016: </i>second installment - release and experiment toggles</p>
+
+<p><i>19 January 2016: </i>published first installment - A Toggling Tale</p>
+</div>
+</div>
+
+<div class = 'div' id = 'bottom-navmenu'>
+<ul class = 'navmenu'>
+<li class = 'top-line'><a class = 'link-home' href = '/'>home</a>  <div class = 'search'>
+    <!-- SiteSearch Google -->
+    <form method='GET' action="https://www.google.com/search">
+      <input type='hidden' name='ie' value='UTF-8'/>
+      <input type='hidden' name='oe' value='UTF-8'/>
+      <input class = 'field' type='text'
+             name='q' size='15' maxlength='255' value=""/>
+      <button class = 'button' type='submit'
+             name='btnG' value=" " title = "Search"/>
+      <input type='hidden' name='domains' value="https://www.google.com?q=ducks"/>
+      <input type='hidden' name='sitesearch' value=""/>
+      <input
+          type='hidden' name='sitesearch' value="https://www.google.com?q=ducks"/>
+    </form>
+  </div>
+
+<span class = 'close' title = 'close'></span>
+</li>
+
+<li class = 'group'><span class = 'group-label'>topics</span>
+<ul class = 'group-contents'>
+<li class = 'item'><a href = '/agile.html'>agile</a></li>
+
+<li class = 'item'><a href = 'http://refactoring.com'>refactoring</a></li>
+
+<li class = 'item'><a href = '/design.html'>design</a></li>
+
+<li class = 'item'><a href = '/nosql.html'>noSQL</a></li>
+
+<li class = 'item'><a href = '/dsl.html'>DSL</a></li>
+
+<li class = 'item'><a href = '/delivery.html'>continuous delivery</a></li>
+
+<li class = 'item'><a href = '/microservices'>microservices</a></li>
+</ul>
+</li>
+
+<li class = 'group'><span class = 'group-label'>media</span>
+<ul class = 'group-contents'>
+<li class = 'item'><a href = '/books'>books</a></li>
+
+<li class = 'item'><a href = '/videos.html'>video</a></li>
+</ul>
+</li>
+
+<li class = 'group'><span class = 'group-label'>site</span>
+<ul class = 'group-contents'>
+<li class = 'item'><a href = '/intro.html'>site introduction</a></li>
+
+<li class = 'item'><a href = '/aboutMe.html'>about me</a></li>
+
+<li class = 'item'><a href = '/faq.html'>FAQ</a></li>
+
+<li class = 'item'><a href = '/tags'>content index</a></li>
+
+<li class = 'item'><a href = '/photos'>photos</a></li>
+</ul>
+</li>
+
+<li class = 'group'><span class = 'group-label'>catalogs</span>
+<ul class = 'group-contents'>
+<li class = 'item'><a href = 'http://refactoring.com/catalog'>refactoring</a></li>
+
+<li class = 'item'><a href = '/eaaCatalog'>P of EAA</a></li>
+
+<li class = 'item'><a href = '/eaaDev'>EAA dev</a></li>
+
+<li class = 'item'><a href = '/dslCatalog'>DSL</a></li>
+</ul>
+</li>
+
+<li class = 'group'><span class = 'group-label'>feeds</span>
+<ul class = 'group-contents'>
+<li class = 'item'><a href = 'https://www.google.com?q=ducks'>twitter</a></li>
+
+<li class = 'item'><a href = '/feed.atom'>rss</a></li>
+
+<li class = 'item'><a href = 'https://www.google.com?q=ducks'>facebook</a></li>
+</ul>
+</li>
+
+<li class = 'group'><span class = 'group-label'>popular</span>
+<ul class = 'group-contents'>
+<li class = 'item'><a href = '/articles/microservices.html'>microservices</a></li>
+
+<li class = 'item'><a href = '/articles/injection.html'>dependency injection</a></li>
+</ul>
+</li>
+
+<li class = 'group'><span class = 'group-label'>Ducks</span>
+<ul class = 'group-contents'>
+<li class = 'item'><a href = 'https://www.google.com?q=ducks'>blogs</a></li>
+
+<li class = 'item'><a href = 'https://www.google.com?q=ducks'>careers</a></li>
+
+<li class = 'item'><a href = 'https://www.google.com?q=ducks'>products</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id='footer'>
+  <div class='tw-logo'>
+    <a href='https://www.google.com?q=ducks'>
+      <img src='/TW_smb.jpg'>
+    </a>
+  </div>
+  <div class='menu-button'>
+    <div class='icon-bars navmenu-button'></div>
+  </div>
+  <div class='copyright'>
+    <p>Ducks | <a href="https://www.google.com?q=ducks">Privacy Policy</a> | <a href="/aboutMe.html#disclosures">Disclosures</a></p>
+  </div>
+</div>
+
+<script src = '/jquery-1.11.3.min.js' type = 'text/javascript'></script>
+
+<script src = '/mfcom.js' type = 'text/javascript'></script>
+
+<script src = 'highlight.pack.js' type = 'text/javascript'></script>
+
+<script src = 'feature-toggles.js' type = 'text/javascript'></script>
+</body>
+</html>
