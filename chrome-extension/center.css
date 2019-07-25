@@ -1,0 +1,9 @@
+html {
+    display: table !important;
+    margin: auto !important;
+}
+
+body {
+    display: table-cell !important;
+    vertical-align: middle !important;
+}
