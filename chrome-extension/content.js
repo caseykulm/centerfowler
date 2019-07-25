@@ -4,7 +4,7 @@ chrome.runtime.onMessage.addListener(
         if( request.message === "clicked_browser_action" ) {
             var firstHref = $("a[href^='http']").eq(0).attr("href");
 
-            console.log(firstHref);
+            // console.log(firstHref);
         }
     }
 );
