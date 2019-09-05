@@ -6,7 +6,8 @@
     "content_scripts": [
         {
           "matches": [
-            "https://martinfowler.com/*"
+            "https://*/*",
+            "http://*/*"
           ],
           "css": ["center.css"],
           "js": ["jquery-3.4.1.min.js", "content.js"]
